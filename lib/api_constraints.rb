@@ -9,6 +9,6 @@ class ApiConstraints
       (req.respond_to?('headers') &&
        req.headers.key?('Accept') &&
        req.headers['Accept'].include?(
-         "application/vnd.railsapibase.v#{@version}"))
+         "application/vnd.sitemanager.v#{@version}"))
   end
 end
