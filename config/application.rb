@@ -27,6 +27,8 @@ module SiteManager
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    config.logger = Logger.new(STDOUT)
+
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
       g.test_framework :rspec, fixture: true

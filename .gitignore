@@ -22,3 +22,6 @@
 
 # Ignore code-climate coverage information files.
 /coverage/*
+
+# Ignore application configuration
+/config/application.yml

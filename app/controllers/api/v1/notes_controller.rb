@@ -19,6 +19,8 @@ module Api
       end
 
       def update
+        logger.debug "params: #{note_params}"
+
         note = current_user.notes.find(params[:id])
         if note.update(note_params)
           render json: note
