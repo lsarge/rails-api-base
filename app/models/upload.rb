@@ -1,3 +1,4 @@
 class Upload < ApplicationRecord
-  mount_uploader :file_name, FileUploaderUploader
+  belongs_to :note
+  mount_uploader :file, FileUploaderUploader
 end

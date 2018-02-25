@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180225144635) do
+ActiveRecord::Schema.define(version: 20180225191625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180225144635) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "published", default: false
+    t.string "file_name"
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
@@ -30,6 +31,8 @@ ActiveRecord::Schema.define(version: 20180225144635) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "file_name"
+    t.string "file"
+    t.index ["note_id"], name: "index_uploads_on_note_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
