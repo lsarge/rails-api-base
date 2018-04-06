@@ -3,6 +3,12 @@ module Api
     class UsersController < ApiController
       skip_before_action :auth_with_token!, only: [:create, :reset_password]
 
+      def validate
+        if current_user
+          render json: current_user
+        end
+      end
+
       def create
         if correct_secret_api_key?
           user = User.new(user_params)
